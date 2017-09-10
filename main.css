@@ -1,104 +1,137 @@
-/*body input:focus:required:invalid,
-body textarea:focus:required:invalid {
-	
-}
-body input:required:valid,
-body textarea:required:valid {
-	
-	}*/
-	/*********** GENERAL **************/
+/*********** GENERAL **************/
+  html{
+  	overflow-x: hidden;
+  }
+
 	body {
 		font-family: 'robotobold', Arial, sans-serif;
 		font-size: 15px;
-		min-width: 320px;
-		max-width: 1920px;
-		position: relative;}
+		position: relative;
+		overflow-x: hidden;
+	}
 
 	.hidden {
-		display: none;}
-
-	.container{
-		width: 1200px;}
-	
-	a{
-		text-transform: uppercase;
-		color: #fcff19;
-	  display: block;
-	  /*height:100%;*/
+		display:none;
 	}
-	a:hover{
-		color: #fcff19;
-		text-decoration: none;}
 
+  .container{
+	  max-width: 1135px;
+	}
 
-	/***********GENERAL**************/
-	/***********	SLIDER  ***************/
+	ul{
+		list-style-type: none;
+    margin:0;
+    padding:0;
+	}
+  
+	/***********	HEADER  ***************/
 	section.first-window{
 		background-image: url(../img/slider-background.jpg);
-		background-repeat: no-repeat;
-		background-position: top center;
+		background-size: cover;
+		width: 100%;
 		position: relative;}
 
 	.line-header {
-		margin-top:20px;}
+    margin-top: 2%;
+  }
+/*************** MENU HEADER ***************/
+   
 
-	.menu_top {
-		margin: 0;
-		padding: 0;
-		margin-top: 20px;
-		padding-left: 50px;
-		position: relative;}
+	/************  MOBILE MENU ************/
+   
 
-	.sub-menu {
-		position: absolute;
-		margin: 0;
-		padding: 0;
-		top: 34px;
-		left: 0;
-		list-style: none;
-		width: 220px;
-		background-color: #fcff19;
-		color: #000000;
-		border-radius: 15px;
-		display: none;}
+input[type="checkbox"] {
+    display: none;
+}
 
-	.sub-menu li{
-		padding: 10px 14px;
-	  cursor: pointer;}
+ nav label {    
+ 	  position: absolute;
+ 	  right: 7%;
+ 	  margin-top: 4%;
+    display: none;   
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 1010;
+} 
 
-	.sub-menu li:first-child{
-		padding-top: 25px;}
 
-	.menu_top > li{
+
+	ul.menu_top{
+		position: relative;
+		margin-top: 4%;
+		padding-left: 15%;
+  }
+
+  ul.menu_top > li{
 		position: relative;
 		display: inline-block;
-		list-style-type: none;
 		margin-right: 10px;
 		padding: 13px;
-		padding-bottom:23px;
-		white-space: nowrap;}
+		white-space: nowrap;
+	}
+  ul.menu_top li:first-child:hover{
+  	border-radius: 15px 15px 0 0;
+  }
+	ul.menu_top li:hover{
+	  background-color: #fcff19;
+	  cursor: pointer;
+	  border-radius: 15px;
+	}
 
-	.menu_top a{
-		display: block;
+	ul.menu_top li:hover a{
+	  color:#000000;
+	}
+
+.menu_top > li:hover .sub-menu,
+.menu_top > li:hover .sub-menu li {
+	 visibility: visible;
+	 z-index: 1000;
+}
+
+   nav a{
+   	font-family: 'robotobold';
+   	text-transform: uppercase;
 		color: #ffffff;
-		text-transform: uppercase;}
+    text-decoration: none;
+   }
 
-	.menu_top li:hover{
+   nav a:hover{
+    text-decoration: none;
+    color: #000000;
+  }
+   nav a:active{
+    text-decoration: none;
+    color: #000000;
+   }
+   nav a:focus{
+   	text-decoration: none;
+    color: #000000;
+    outline: none;
+   }
+
+	ul.sub-menu{
+		position: absolute;
+		top: 40px;
+		left: 0;
+		padding-top: 5px;
+		width: 220px;
 		background-color: #fcff19;
-		border-radius: 15px;}
+		border-radius: 0 15px 15px 15px;
+		visibility: hidden;
+	  }
 
-	.menu_top li:hover a{
-		color: #000000;}	
+	 ul.sub-menu li{
+		color:#000000;
+		padding: 10px 14px;
+	  }
 
-	.menu_top > li:hover .sub-menu {
-		display: block;}
-
+/************ SLIDER CONTENT **************/
 	h1{
-		margin-top: 327px;
+		margin-top: 18%;
 		margin-bottom:5px;
 		text-transform: uppercase;
 		color:#ffffff;
-		font-size: 50px;}
+		font-size: 3.12em;}
 
 	.heading p{
 		font-family: 'robotothin', Arial, sans-serif;
@@ -118,8 +151,11 @@ body textarea:required:valid {
 		border-radius: 8px;}
 
 	.btn:hover {
-		background-color:#0c0c0c;
-		color:#dcde36;}
+		background-color:#fcff19;
+		color:#000000;
+	  font-weight: 600;
+	  transition: .3s;
+	}
 
 	.btn:active {
 		background-color:#272626;
@@ -130,138 +166,987 @@ body textarea:required:valid {
 		background-image: url(../img/scroll_icon_link.png);
 		width: 66px;
 		height: 77px;
-		margin-top: 247px;
+		margin-top: 17%;
 		margin-bottom: 33px;
 		margin-right: auto;
 		margin-left: auto;}
 
 		a.scroll:hover{
-		background-image: url(../img/scroll_icon_active.png);}
-	/**********			SLIDER END		***************/
+		background-image: url(../img/scroll_icon_active.png);
+	  transition: .5s;}
+    
+    .header-carousel{
+    	width: 100%;
+    	position: relative;
+    }
+    
+    .header-carousel .carousel-control{
+    	position: absolute;
+      background: none;
+    	box-shadow: none;
+    	background: url(../img/slid.png) no-repeat 50% 90%;
+    	width: 150px;
+    }
 
-	/****************CATEGORIES*******************/
+  .header-carousel .left {
+  left: -4%;
+  top: 72%;
+  background-position: 75px;
+    }
+  .header-carousel .right {
+  right: -4%;
+  top: 72%;
+  background-position: -75px;
+    }
+ 
 
-	section.categories{
+	/************ CATEGORIES ****************/
+
+	section#categories{
 		background-image: url(../img/cat_bg_image.jpg);
-		background-repeat: no-repeat;
-		background-position: top center;
+		background-size: cover;
+		width: 100%;
 		position: relative;}
 
-		.header-ctg{
+		.page-header{
 			font-family: 'robotobold', Arial, sans-serif;
 			text-transform: uppercase;
 			color: #000000;
-			margin-top: 72px;
-			margin-bottom: 72px;}
+			margin-top: 10%;
+			border-bottom: none;
+		}
 
-	/*.cat-items p{
-		font-family: 'robotolight', Arial, sans-serif;
-		font-size: 16px;
-		line-height: 32px;
-		color: #ffffff;
-	  z-index: 2;}*/
+		.cat {
+			margin-bottom: 6%;
+		}
 
-	/*.item-1{
-		background-image: url(../img/cat_photo1.jpg);
-		width: 346px;
-		height: 288px;}
+  a.btn-store {
+	    position: absolute;
+	    display: inline-block;
+	    font-family: 'robotobold';
+	    font-size: 12px;
+	    line-height: 32.5px;
+	    color: #f7f7f4;
+	    border: 3px solid white;
+	    text-transform: uppercase;
+	  }
 
-	.item-2{
-		background-image: url(../img/cat_photo2.jpg);
-		width: 346px;
-		height: 288px;}
+  div.categories ul,
+  div.categories li{
+	    margin: 0;
+	    padding: 0;
+	    list-style-type: none;
+    }
 
-	.item-3{
-		background-image: url(../img/cat_photo3.jpg);
-		width: 346px;
-		height: 288px;}*/
+  div.categories li {
+	    display: inline-block;
+	    max-width: 346px;
+	    position: relative;
+  }
 
-/*	.cat-links {
-		display: inline-block;
-		margin-top:142px;
-	  z-index: 2;}*/
+  div.categories ul li:nth-child(5n-2),
+  div.categories ul li:nth-child(3n-2) {
+  	margin-right: 25px;
+  }
 
-/*	.cat{
-		margin: 0 auto;
-		position: relative;
-	  z-index: 2;}*/
+  .categories img{
+	    width: 100%;
+	    display: block;
+  }
+   
+   ul.cat-list li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: rgba(252, 255, 25, 0.17);
+    width: 100%;
+    height: 100%;
+    -webkit-clip-path: polygon(0 0, 0% 100%, 100% 100%);
+    clip-path: polygon(0 0, 0% 100%, 100% 100%);
+    -webkit-clip-path: url("#clip-ribbon");
+    clip-path: url("#clip-ribbon");
+    transition: .3s;
+    opacity: 0;
+}
+   ul.cat-list li:hover::after {
+    opacity: 1;
+}
 
-/*div.cat:hover .shape-triangle{
-	display: block;
+
+   /*variant with gradient*/
+
+  /*ul.cat-list li:hover::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: linear-gradient(to top right, rgba(252, 255, 25, 0.17) 0%, rgba(252, 255, 25, 0.17) 49.99999%, rgba(252, 255, 25, 0) 50%, rgba(252, 255, 25, 0) 100%);
 }*/
 
-	/*.shape-triangle {
-	display:none;
-	content: '';
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 288px 0 0 346px;
-  border-color: transparent transparent transparent rgba(252, 255, 25, 0.17);
-  z-index:0;
-}*/
+  .descr {
+    padding-top: 40%;
+  	font-family: 'robotobold';
+    font-size: 15 px;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  	display: block;
+  	color: #fcff19;
+  	text-transform: uppercase;
+  }
 
-a.btn-store {
-	  position: absolute;
-	  display: inline-block;
-	  font-family: 'robotobold';
-	  font-size: 12px;
-	  line-height: 32.5px;
-	  color: #f7f7f4;
-	  border: 3px solid white;
+.def {
+	  font-family: 'robotolight';
+    font-size: 16 px;
+    color: #ffffff;
+    text-transform: capitalize;
+}
+
+a.descr-btn{
+	  visibility: hidden;
 	  text-transform: uppercase;
+	  border: 3px solid #ffffff;
+	  border-radius: 10px;
+    color: #ffffff;
+    display: inline-block;
+    font-family: "robotobold";
+    font-size: 12px;
+    margin: 0 auto;
+    margin-left: -17%;
+    margin-top: 58%;
+    padding: 14px 20px;
+    position: absolute;
+    z-index: 100;
+}
+
+a.descr-btn:hover{
+    text-decoration: none;
+    border-color: #fcff19;
+    color: #fcff19;
+}
+
+div.categories li:hover .descr-btn{
+	visibility: visible;
+}
+
+div.categories {
+	margin-bottom: 15%;
+}
+
+/************ SECTION POPULAR *************/
+
+
+#popular {
+	max-width: 1920px;
+	margin: 0 auto;
+}
+ 
+/* .bikes-item{
+  max-width: 490px;
+ }*/
+
+.container-select{
+	  display: inline-block; 
+}
+
+.container-select  select{  
+    float: left; 
+    outline: none;
+    margin-right: 15px;
+    padding: 12px 65px 12px 15px;
+    border: 1px solid #8f8f8f;
+    border-radius: 10px;
+    font-size: 12px;     
+    text-transform: uppercase;
+     background-image: url(../img/select-icon.png);
+     background-position: 90% 50%;
+     background-repeat: no-repeat;
+     -webkit-appearance: none;
+     -moz-appearance: none; /* for FF */
+     text-overflow: '';
+     -ms-appearance: none;  /* for IE */
+     appearance: none!important;
+}
+ 
+  select::-ms-expand {
+  display: none;
+}
+ 
+
+  h2.pop {
+	margin-bottom: 4%;
+}
+
+img.popular-item {
+	display: inline-block;
+}
+
+div.bikes{
+  margin-bottom: 4.5%;
+}
+
+.bike-name {
+	text-transform: uppercase;
+	color: #000000;
+}
+.price{
+	font-family: 'robotolight', Arial, sans-serif;
+  color: #000000;
+}
+
+.bikes-btn {
+	display: inline-block;
+	text-transform: uppercase;
+	color: #ffffff;
+	background-color: #b7b7b7;
+	padding: 13px 32px;
+	border-radius: 10px;
+	font-size: 12px;
+	border: none;
+}
+.bikes-btn:hover {
+	color: #fcff19;
+	background-color: #000000;
+	text-decoration: none;
+}
+
+.form-btn:active {
+	background-color:#272626;
+	color:#c0c232;
+}
+
+
+
+
+
+/**************CONTACT US*****************/
+
+ section#contact {
+ 	background-image: url(../img/contact_us_bg.jpg);
+ 	background-size: cover;
+	width: 100%;
+	position: relative;
+	min-height:560px;
+ }
+
+   h2.contact-us {
+   	margin-top: 5.5%;
+   }
+
+  p.contact-info {
+  	font-family: 'robotoregular';
+  	font-size: 15px;
+  	color: #000000;
+  	margin-bottom: 47px;
+  }
+
+  form {
+  	width:43%;
+  	margin: 0 auto;
+  }
+
+  #contact form input[type="text"],
+  #contact form input[type="email"],
+  #contact textarea {
+  width: 42.5%;
+  padding: 10px;
+  border: 1px solid #b7b7b7;
+  margin-bottom: 2em;
+  outline: none;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-style: italic;
+  font-size: 12px;
+  color: #808080;
+}
+  #contact form input[type="text"]:first-child {
+  	margin-right: 4%;
+  }
+
+  #contact textarea {
+	height:170px;
+}
+
+  #contact form input[type="email"],
+  #contact textarea {
+	width: 90%;
+	resize: none;
+	margin: 0 auto 2em auto;
+}
+
+  .submit {
+  display: block;
+  text-transform: uppercase;
+	color: #ffffff;
+	background-color: #b7b7b7;
+	padding: 15px 30px;
+	border-radius: 10px;
+	font-size: 12px;
+	border: none;
+	width:90%;
+	margin: 0 auto 10% auto;
+}
+  .submit:hover {
+	color: #fcff19;
+	background-color: #000000;
+	text-decoration: none;
+}
+  .submit:active {
+	background-color:#272626;
+	color:#c0c232;
+}
+
+/***************FOOTER********************/
+
+  footer {
+	background-color: #fcff19;
+}
+  .line-foot {
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+
+  ul.menu_bottom{
+		position: relative;
+		padding-left: 22%;
+  }
+
+  ul.menu_bottom li{
+		position: relative;
+		display: inline-block;
+		margin-right: 10px;
+		padding: 13px;
+		white-space: nowrap;
+	}
+ 
+   nav.nav-foot a{
+   	font-family: 'robotobold';
+   	text-transform: uppercase;
+		color: #000000;
+    text-decoration: none;
+   }
+
+
+  /*****************  MEDIA *******************/
+
+  /********* 380 **********/
+@media screen and (max-width: 380px) {
+    
+    .container {
+    	width:100% !important;
+    }
+    
+    	.line-header {
+    margin-top: 6%;
+     }
+
+    .shop_bikes{  
+		 font-size: 0.7em;
+		 padding: 10px 22px;
+    }
+
+    .contact-us {
+    	margin-top: 12% !important;
+    }
+   
+    h1{
+    	font-size: 1.9em;
+    	margin-top: 50%;
+    }
+
+    h2{
+    	font-size: 1.4em;
+    }
+    .carousel-inner p {
+    	font-size: 1.2em;
+    }
+
+
+    /*********HEAD MENU*********/
+    nav.hamburger label{
+         display: inline-block;
+    }
+    
+    nav.hamburger > ul {
+        display: none;
+    }
+
+    input[type="checkbox"]:checked ~ label + ul {
+        display: block;
+        position: absolute;
+        top: 55px;
+        left: 0;
+        right: 0;
+        padding: 0;
+        width: 100%;
+        z-index: 1011;
+    }
+    
+    ul.menu_top li{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: block !important;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    ul.sub-menu{
+		position: static;
+		padding: 5px 0 0 0;
+		width: 100% !important;
+		border-radius: 0 !important;
+		text-align: center;
+		display: none;
+    }
+
+   ul.menu_top ul.sub-menu li{
+   	width:100%;
+   	background-color: #fcff19 !important;
+   	border-bottom: none;
+   }
+
+  ul.menu_top li:first-child:hover{
+  	border-radius: 0 !important;
+  }
+ 
+	ul.menu_top li:hover{
+	  cursor: pointer;
+	  border-radius: 0;
 	}
 
-div.categories ul,
-div.categories li{
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
+ul.menu_top > li:hover .sub-menu,
+ul.menu_top > li:active .sub-menu li {
+	 display: block !important;
+	 z-index: 2020 !important;
 }
 
-div.categories li {
-	display: inline-block;
-	width: 346px;
-	position: relative;
-}
-.categories img{
-	width: 100%;
-	display: block;
+    a.bin {
+    	display: none !important;
+    }
+   
+    a.carousel-control{
+    	display: none;
+    }
+
+    a.scroll {
+    	visibility: hidden;
+    }
+
+    div.categories ul li:nth-child(5n-2),
+    div.categories ul li:nth-child(3n-2) {
+  	margin-right: 0;
+  }
+
+    ul.cat-list {
+    	margin: 0 auto !important;
+    }
+    ul.cat-list li {
+    	display: block;
+    }
+    ul.cat-list .main-heading{
+      font-size: 0.9em;
+    } 
+    ul.cat-list .def{
+      font-size: 0.9em;
+    } 
+
+    div.pop-item {
+    	margin-bottom: 10px;
+    }
+
+    .bike-name {
+	   font-size: 0.7em;
+    }
+    .price{
+	   font-size: 0.7em;
+    }
+    .container-select{
+    	padding-left: 7%;
+    }
+    .container-select  select{   
+    margin: 0;
+    margin-right: 5px;
+    padding: 8px 33px 8px 8px;
+    font-size: 0.7em;
+    }
+    .bikes-btn{
+    	float: left;
+	    padding: 9px 23px;
+	    font-size: 0.7em;
+    }
+    .price-block{
+    	margin-bottom: 15px;
+    	padding-left: 30px;
+    	text-align:left;
+    }
+
+     form {
+    	width: 100%;
+    }
+
+     ul.menu_bottom a{
+    	font-size: 0.8em;
+    }
+    ul.menu_bottom li{
+    	margin-right: 5px;
+    	padding: 7px;
+    }
+    ul.menu_bottom{
+		  padding: 0;
+		  margin: 0 auto 15px auto;
+    } 
+    .line-foot img.logo {
+    	margin: 15px auto;
+    }
+    ul .menu-bottom{
+    	padding: 0;
+    	margin: 0 auto;
+    }
 }
 
-.descr {
-	padding-top: 40%;
-	font-family: 'robotobold';
-  font-size: 15 px;
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-	display: block;
-	color: #fcff19;
-	text-transform: uppercase;
+
+/********* 768 **********/
+@media (min-width: 380px) and (max-width: 768px) {
+    
+     .line-header {
+    margin-top: 4%;
+     }
+
+    img.logo-top{
+    	padding-left: 5%;
+    }
+
+    .shop_bikes{  
+		 font-size: 0.8em;
+		 padding: 12px 24px;
+    }
+     
+    .container {
+    	width:100% !important;
+    }
+
+    .contact-us {
+    	margin-top: 12% !important;
+    }
+   
+    h1{
+    	font-size: 1.7em;
+    	margin-top: 45%;
+    }
+
+    h2{
+    	font-size: 1.4em;
+    }
+    .carousel-inner p {
+    	font-size: 1.1em;
+    }
+
+/*********************/
+   nav.hamburger label{
+         display: inline-block;
+         right: 7%;
+ 	       margin-top: 3%;
+    }
+
+    
+   nav.hamburger > ul {
+        display: none;
+    }
+
+   input[type="checkbox"]:checked ~ label + ul {
+        display: block;
+        position: absolute;
+        top: 55px;
+        left: 0;
+        right: 0;
+        padding: 0;
+        width: 100%;
+        z-index: 1011;
+    }
+    
+    ul.menu_top li{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: block !important;
+    text-align: center !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+
+    ul.sub-menu{
+		position: static;
+		padding-top: 10px;
+		border-radius: 0;
+		text-align: center !important;
+		display: none;
+    }
+
+   ul.menu_top ul.sub-menu li{
+   	width: 100%;
+   	text-align: center !important;
+   	background-color: rgba(252, 255, 25, 0.5) !important;
+   	border-bottom: none;
+   }
+
+
+  ul.menu_top li:first-child:hover{
+  	border-radius: 0 !important;
+  }
+ 
+	ul.menu_top li:hover{
+	  cursor: pointer;
+	  border-radius: 0;
+	}
+
+ul.menu_top > li:hover .sub-menu,
+ul.menu_top > li:active .sub-menu li {
+	 display: block !important;
+	 z-index: 2020 !important;
+	 margin: 0 auto;
 }
-.def {
-	font-family: 'robotolight';
-  font-size: 16 px;
-  color: #ffffff;
-  text-transform: capitalize;
+
+
+
+/********************/
+      a.bin {
+    	display: none !important;
+    }
+
+    a.carousel-control{
+    	display: none;
+    }
+
+     a.scroll {
+    	visibility: hidden;
+    }
+   
+    ul.cat-list li {
+    	margin: 0 auto !important;
+    	display: block;
+    }
+    ul.cat-list .main-heading{
+      font-size: 0.9em;
+    } 
+    ul.cat-list .def{
+      font-size: 0.9em;
+    } 
+
+     div.categories ul li:nth-child(5n-2),
+     div.categories ul li:nth-child(3n-2) {
+  	margin-right: 0;
+  }
+    
+    div.pop-item {
+    	margin-bottom: 0;
+    }
+
+    .bike-name {
+	   font-size: 0.8em;
+    }
+    .price{
+	   font-size: 0.8em;
+    }
+    .container-select{
+    	padding-left: 30%;
+    }
+    .container-select  select{   
+    margin: 0;
+    margin-right: 7px;
+    padding: 9px 35px 9px 10px;
+    font-size: 0.7em;
+    }
+    .bikes-btn{
+    	float: left;
+	    padding: 10px 24px;
+	    font-size: 0.7em;
+    }
+    .price-block{
+    	margin-bottom: 15px;
+    	padding-left: 30px;
+    	text-align:left;
+    }
+
+     .bikes-item{
+      max-width: 490px;
+      margin: 0 auto;
+     }
+
+    form {
+    	width: 60%;
+    }
+
+    .line-foot img.logo {
+    	margin: 5px auto;
+    }
+
+    ul .menu-bottom{
+    	padding: 0;
+    	margin: 0 auto;
+    }
+
+     ul.menu_bottom a{
+    	font-size: 0.8em;
+    }
+    ul.menu_bottom li{
+    	margin-right: 10px;
+    	padding: 7px;
+    }
+    ul.menu_bottom{
+		  padding: 0;
+		  margin: 0 auto 5px auto;
+    } 
 }
-a.descr-btn{
-	 font-family: 'robotobold';
-	 font-size: 12px;
-	 color: #ffffff;
-	 padding: 18px 24px;
-	 border: 3px solid #ffffff;
-	 margin: 207px auto 38px auto;
-   position: absolute;
-   display: inline-block;
-   s
+
+
+/************* 1024 *****************/
+@media (min-width: 768px) and (max-width: 1024px) {
+
+.line-header {
+    margin-top: 4%;
+     }
+
+    img.logo-top{
+    	padding-left: 5%;
+    }
+
+    .shop_bikes{  
+		 font-size: 0.8em;
+		 padding: 12px 22px;
+    }
+     
+    .container {
+    	width:100% !important;
+    }
+
+    .contact-us {
+    	margin-top: 12% !important;
+    }
+   
+    h1{
+    	font-size: 1.8em;
+    	margin-top: 45%;
+    }
+
+    h2{
+    	font-size: 1.5em;
+    }
+    .carousel-inner p {
+    	font-size: 1.2em;
+    }
+
+/*********************/
+   nav.hamburger label{
+         display: inline-block;
+         right: 7%;
+ 	       margin-top: 3%;
+    }
+
+    
+   nav.hamburger > ul {
+        display: none;
+    }
+
+   input[type="checkbox"]:checked ~ label + ul {
+        display: block;
+        position: absolute;
+        top: 55px;
+        left: 0;
+        right: 0;
+        padding: 0;
+        width: 100%;
+        z-index: 1011;
+    }
+    
+    ul.menu_top li{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: block !important;
+    text-align: center !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+
+    ul.sub-menu{
+		position: static;
+		padding-top: 10px;
+		border-radius: 0;
+		text-align: center;
+		display: none;
+    }
+
+    ul.sub-menu li{
+   	width: 100%;
+   	text-align: center;
+   	background-color: rgba(252, 255, 25, 0.5) !important;
+   	border-bottom: none;
+   }
+
+
+  ul.menu_top li:first-child:hover{
+  	border-radius: 0 !important;
+  }
+ 
+	ul.menu_top li:hover{
+	  cursor: pointer;
+	  border-radius: 0;
+	}
+
+ul.menu_top > li:hover .sub-menu,
+ul.menu_top > li:active .sub-menu li {
+	 display: block !important;
+	 z-index: 2020 !important;
+	 margin: 0 auto;
 }
-/*content: '';
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 288px 0 0 346px;
-  border-color: transparent transparent transparent rgba(252, 255, 25, 0.17);*/
+
+
+
+/********************/
+      a.bin {
+    	display: none !important;
+    }
+   
+    ul.cat-list li {
+    	margin: 0 auto !important;
+    	display: block;
+    }
+    ul.cat-list .main-heading{
+      font-size: 0.9em;
+    } 
+    ul.cat-list .def{
+      font-size: 0.9em;
+    } 
+
+     div.categories ul li:nth-child(5n-2),
+     div.categories ul li:nth-child(3n-2) {
+  	margin-right: 0;
+  }
+    
+    div.pop-item {
+    	margin-bottom: 0;
+    }
+
+    .bike-name {
+	   font-size: 0.8em;
+    }
+    .price{
+	   font-size: 0.8em;
+    }
+    .container-select{
+    	padding-left: 20%;
+    }
+    .container-select  select{   
+    margin: 0;
+    margin-right: 7px;
+    padding: 8px 30px 8px 9px;
+    font-size: 0.7em;
+    }
+    .bikes-btn{
+    	float: left;
+	    padding: 9px 23px;
+	    font-size: 0.7em;
+    }
+    .price-block{
+    	margin-bottom: 15px;
+    	padding-left: 30px;
+    	text-align:left;
+    }
+
+     .bikes-item{
+      max-width: 490px;
+      margin: 0 auto;
+     }
+
+    form {
+    	width: 50%;
+    }
+    
+    footer img.logo{
+      padding-left: 15%;
+    }
+
+     ul.menu_bottom a{
+    	font-size: 0.9em;
+    }
+    
+     ul.menu_bottom li{
+		  margin-right: 0 !important;
+		  padding: 10px;
+	  }
+
+     ul.menu_bottom{
+		  position: relative;
+		  padding-left: 0;
+     }
+}
+
+
+/************ 1200  ****************/
+@media (min-width: 1024px) and (max-width: 1200px) {
+    
+    ul.menu_top {
+    padding-left: 0%;
+    }
+
+
+    .line-header {
+    margin-top: 4%;
+     }
+    
+    h1{
+    	font-size: 2.7em;
+    	margin-top: 25%;
+    }
+
+    h2{
+    	font-size: 1.9em;
+    }
+
+   ul.cat-list li {
+    	margin: 0 auto !important;
+    	display: block;
+    }
+    ul.cat-list .main-heading{
+      font-size: 0.9em;
+    } 
+    ul.cat-list .def{
+      font-size: 0.9em;
+    } 
+  
+     div.categories ul li:nth-child(5n-2),
+     div.categories ul li:nth-child(3n-2) {
+  	margin-right: 0;
+    }
+
+
+    .bike-name {
+     padding-left: 5px;
+	   font-size: 0.9em;
+    }
+    .price{
+    padding-left: 5px;
+	   font-size: 0.9em;
+    }
+    .container-select{
+    	padding-left: 18%;
+    }
+    .container-select  select{   
+    margin: 0;
+    margin-right: 7px;
+    padding: 10px 30px 10px 11px;
+    font-size: 0.8em;
+    }
+    .bikes-btn{
+    	float: left;
+	    padding: 11px 23px;
+	    font-size: 0.8em;
+    }
+
+    ul.menu_bottom {
+    position: relative;
+    padding-left: 0;
+    }
+
+}
